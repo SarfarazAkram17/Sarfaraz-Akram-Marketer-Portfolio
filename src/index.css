@@ -89,6 +89,11 @@ img {
   color: var(--ink);
   background: var(--acid);
 }
+.toast{
+  display: block;
+  font-size: 18px;
+  margin-bottom: 4px;
+}
 
 /* ---------- Themed thin scrollbar ---------- */
 /* Chrome, Edge, Safari (custom size + gradient thumb) */
@@ -148,7 +153,7 @@ img {
   }
   .portfolio-cursor {
     position: fixed;
-    z-index: 140;
+    z-index: 100000;
     inset: 0;
     opacity: 0;
     pointer-events: none;
