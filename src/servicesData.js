@@ -1,24 +1,21 @@
 import {
-  LuMegaphone,
-  LuTarget,
   LuInstagram,
   LuLinkedin,
-  LuMousePointerClick,
   LuShare2,
   LuLayoutTemplate,
   LuGlobe,
   LuSearch,
-  // LuPenTool,
-  // LuChartNoAxesCombined,
 } from "react-icons/lu";
+import {
+  FaFacebookF,
+} from "react-icons/fa";
+import { SiMeta, SiGoogleads } from "react-icons/si";
 
-// Edit this list to add, remove or reword services.
-// Each service shows as a card in the "Services" section.
 const servicesData = [
   {
     key: "facebook-marketing",
     title: "Facebook Marketing",
-    icon: LuMegaphone,
+    icon: FaFacebookF,
     desc: "Turn your Facebook page into a steady source of reach, trust and customer messages.",
     points: [
       "Page setup & optimization",
@@ -29,7 +26,7 @@ const servicesData = [
   {
     key: "meta-ads",
     title: "Meta Ads",
-    icon: LuTarget,
+    icon: SiMeta,
     desc: "Paid campaigns on Facebook and Instagram built around one goal: profitable results.",
     points: [
       "Audience research & targeting",
@@ -62,7 +59,7 @@ const servicesData = [
   {
     key: "google-ads",
     title: "Google Ads",
-    icon: LuMousePointerClick,
+    icon: SiGoogleads,
     desc: "Reach customers at the exact moment they search for what you sell.",
     points: [
       "Search & display campaign setup",

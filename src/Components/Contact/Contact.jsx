@@ -60,13 +60,10 @@ const Contact = () => {
       id="contact"
       aria-labelledby="contact-title"
     >
-      <div className="section-heading" data-aos="fade-up">
-        <div>
-          <div className="section-kicker">Ready to grow?</div>
-          <h2 className="section-title" id="contact-title">
-            Let’s talk.
-          </h2>
-        </div>
+      <div className="section-heading" data-reveal>
+        <h2 className="section-title" id="contact-title">
+          Let’s talk.
+        </h2>
         <p className="section-description">
           Want more customers, a better online presence, or just advice on
           where to start? Tell me about your business and I’ll reply with ideas.
@@ -74,9 +71,8 @@ const Contact = () => {
       </div>
 
       <div className="contact-grid">
-        <aside className="contact-note" data-aos="fade-up">
+        <aside className="contact-note" data-reveal>
           <div>
-            <div className="eyebrow">Open conversation</div>
             <h3>Growth starts with a conversation.</h3>
             <p>
               Reach out directly or send a note through the form. I’m based in
@@ -135,7 +131,7 @@ const Contact = () => {
           </div>
         </aside>
 
-        <div className="contact-form-card" data-aos="fade-up">
+        <div className="contact-form-card" data-reveal data-delay="120">
           <div className="form-topline">
             <div>
               <h3>Send a message</h3>

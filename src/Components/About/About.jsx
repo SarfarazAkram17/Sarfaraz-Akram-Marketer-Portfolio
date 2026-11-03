@@ -1,6 +1,7 @@
 import { HiArrowUpRight } from "react-icons/hi2";
 import { LuMegaphone, LuShare2 } from "react-icons/lu";
 // import { LiaMedalSolid } from "react-icons/lia"; // Award metric (paused)
+import TiltCard from "../Tilt3D/TiltCard";
 import servicesData from "../../servicesData";
 import skillGroups from "../../skillsData";
 
@@ -18,13 +19,10 @@ const About = () => (
     id="about"
     aria-labelledby="about-title"
   >
-    <div className="section-heading" data-aos="fade-up">
-      <div>
-        <div className="section-kicker">A little context</div>
-        <h2 className="section-title" id="about-title">
-          Marketing with a plan.
-        </h2>
-      </div>
+    <div className="section-heading" data-reveal>
+      <h2 className="section-title" id="about-title">
+        Marketing with a plan.
+      </h2>
       <p className="section-description">
         I enjoy the whole process: understanding a business, finding the right
         audience, and turning attention into real customers.
@@ -32,7 +30,7 @@ const About = () => (
     </div>
 
     <div className="about-grid">
-      <article className="about-story" data-aos="fade-up">
+      <article className="about-story" data-reveal>
         <p>
           I’m a digital marketer from Bangladesh who loves helping small and
           growing businesses get noticed online. I focus on{" "}
@@ -43,8 +41,8 @@ const About = () => (
           I plan content, run Facebook and Instagram campaigns, and build the
           landing pages and websites that turn clicks into enquiries. I’m always
           testing new ideas, reading the data, and learning what works. Away
-          from work, I’m passionate about cricket and proud to have earned a black
-          belt, a good reminder that discipline and patience pay off.
+          from work, I’m passionate about cricket and proud to have earned a
+          black belt, a good reminder that discipline and patience pay off.
         </p>
         <p>
           I work as a <strong>contract-based service provider</strong>: every
@@ -54,58 +52,54 @@ const About = () => (
         </p>
       </article>
 
-      <aside className="about-aside" data-aos="fade-left">
-        <div>
+      <div data-reveal data-delay="120">
+        <TiltCard className="about-aside" max={6}>
           <span className="aside-label">How I like to work</span>
           <p className="aside-statement">
             Good marketing should feel{" "}
             <span>clear, honest, and measurable.</span>
           </p>
-        </div>
-        <div className="skill-line" aria-label="Primary focus areas">
-          {["Meta Ads", "Facebook", "Instagram", "SEO", "Landing pages"].map(
-            (skill) => (
-              <span className="skill-pill" key={skill}>
-                {skill}
-              </span>
-            ),
-          )}
-        </div>
-      </aside>
+          <div className="skill-line" aria-label="Primary focus areas">
+            {["Meta Ads", "Facebook", "Instagram", "SEO", "Landing pages"].map(
+              (skill) => (
+                <span className="skill-pill" key={skill}>
+                  {skill}
+                </span>
+              ),
+            )}
+          </div>
+        </TiltCard>
+      </div>
     </div>
 
-    <div
-      className="metric-strip"
-      aria-label="Portfolio highlights"
-      data-aos="fade-up"
-    >
-      <a className="metric-panel" href="#services">
-        <strong>
-          <LuMegaphone aria-hidden="true" />{" "}
-          {String(servicesData.length).padStart(2, "0")}
-        </strong>
-        <span>Services offered</span>
-      </a>
-      <a
-        className="metric-panel"
-        href="#portfolio"
-        onClick={() => openTab("skills")}
-      >
-        <strong>
-          <LuShare2 aria-hidden="true" />{" "}
-          {String(platformCount).padStart(2, "0")}
-        </strong>
-        <span>Marketing skills</span>
-      </a>
+    <div className="metric-strip" aria-label="Portfolio highlights">
+      <div data-reveal>
+        <TiltCard as="a" className="metric-panel" href="#services" max={12}>
+          <span className="metric-icon"><LuMegaphone aria-hidden="true" /></span>
+          <strong>{String(servicesData.length).padStart(2, "0")}</strong>
+          <span>Services offered</span>
+        </TiltCard>
+      </div>
+      <div data-reveal data-delay="120">
+        <TiltCard
+          as="a"
+          className="metric-panel"
+          href="#portfolio"
+          max={12}
+          onClick={() => openTab("skills")}
+        >
+          <span className="metric-icon"><LuShare2 aria-hidden="true" /></span>
+          <strong>{String(platformCount).padStart(2, "0")}</strong>
+          <span>Marketing skills</span>
+        </TiltCard>
+      </div>
       {/* Award metric (paused)
       <a
         className="metric-panel"
         href="#portfolio"
         onClick={() => openTab("awards")}
       >
-        <strong>
-          <LiaMedalSolid aria-hidden="true" /> 01
-        </strong>
+        <strong><LiaMedalSolid aria-hidden="true" /> 01</strong>
         <span>Award</span>
       </a>
       */}

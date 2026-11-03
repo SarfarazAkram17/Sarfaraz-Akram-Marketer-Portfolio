@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
-import Tilt from "react-parallax-tilt";
 import { FaWhatsapp } from "react-icons/fa";
 import { LiaLinkedinIn } from "react-icons/lia";
 import { HiArrowDown, HiArrowUpRight } from "react-icons/hi2";
-import myPic from "../../assets/my-pic.png";
+import HeroStage from "./HeroStage";
 // import { FiDownload } from "react-icons/fi"; // re-enable with the resume button below
 
 const Hero = () => {
@@ -13,7 +12,6 @@ const Hero = () => {
     "Digital Marketer",
     "Meta Ads Specialist",
     "Social Media Marketer",
-    "Growth-focused strategist",
   ];
 
   useEffect(() => {
@@ -29,12 +27,14 @@ const Hero = () => {
 
   return (
     <section className="hero-section section-wrap" aria-labelledby="hero-title">
-      <div className="hero-copy" data-aos="fade-up">
-        <div className="eyebrow">Contract-based digital marketer · Bangladesh</div>
+      <div className="hero-copy">
+        <div className="hero-status">
+          <span className="status-dot" aria-hidden="true" />
+          Contract-based digital marketer in Bangladesh
+        </div>
         <h1 className="hero-title" id="hero-title">
-          <span className="hero-name">Sarfaraz</span>
-          <br />
-          <span className="hero-accent">Akram.</span>
+          <span>Sarfaraz</span>
+          <span>Akram</span>
         </h1>
         <p className="hero-role">
           I’m a{" "}
@@ -57,7 +57,8 @@ const Hero = () => {
         <p className="hero-description">
           I help businesses grow online with Facebook and Instagram marketing,
           Meta ads, SEO, and landing pages that convert. I care about the
-          numbers that matter: more reach, more leads, and more customers. Available for contract-based projects.
+          numbers that matter: more reach, more leads, and more customers.
+          Available for contract-based projects.
         </p>
 
         <div className="hero-actions">
@@ -100,37 +101,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div
-        className="hero-visual"
-        data-aos="fade-left"
-        aria-label="Profile portrait"
-      >
-        <div className="portrait-orbit" aria-hidden="true" />
-        <div className="visual-index">
-          <strong>PROFILE / 01</strong>
-          <span>DIGITAL · MARKETING</span>
-        </div>
-        <Tilt
-          tiltMaxAngleX={5}
-          tiltMaxAngleY={6}
-          glareEnable={false}
-          tiltEnable={!reduceMotion}
-          transitionSpeed={900}
-          className="portrait-stage"
-        >
-          <div className="portrait-frame">
-            <img src={myPic} alt="Portrait of Sarfaraz Akram" />
-          </div>
-        </Tilt>
-        <div className="visual-caption">
-          <span className="caption-dot" />
-          <span>Strategy first. Growth you can measure.</span>
-        </div>
-      </div>
-
-      <div className="hero-scroll-note" aria-hidden="true">
-        Scroll to explore
-      </div>
+      <HeroStage />
     </section>
   );
 };

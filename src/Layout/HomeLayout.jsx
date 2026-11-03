@@ -7,9 +7,11 @@ import Showcase from "../Components/Showcase/Showcase";
 import Contact from "../Components/Contact/Contact";
 import Navbar from "../Components/Navbar/Navbar";
 import { IoArrowUpOutline } from "react-icons/io5";
+import useRevealOnScroll from "../hooks/useRevealOnScroll";
 
 const HomeLayout = () => {
   const { hash } = useLocation();
+  useRevealOnScroll();
   const backToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   useEffect(() => {

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import AOS from "aos";
 import { LuShare2 } from "react-icons/lu";
 // import { LuCodeXml } from "react-icons/lu";            // Projects tab (paused)
 // import { PiCertificate } from "react-icons/pi";        // Certificates tab (paused)
@@ -33,11 +32,6 @@ const Showcase = () => {
     return () => window.removeEventListener("portfolio-tab", selectTab);
   }, []);
 
-  useEffect(() => {
-    const frame = window.requestAnimationFrame(() => AOS.refreshHard());
-    return () => window.cancelAnimationFrame(frame);
-  }, [activeTab]);
-
   const panel = {
     skills: <MarketingSkills />,
     // projects: <Projects />,
@@ -63,11 +57,8 @@ const Showcase = () => {
       id="portfolio"
       aria-labelledby="portfolio-title"
     >
-      <div className="section-heading showcase-head" data-aos="fade-up">
-        <div>
-          <div className="section-kicker">Skills &amp; expertise</div>
-          <h2 className="section-title" id="portfolio-title">Skills that drive growth.</h2>
-        </div>
+      <div className="section-heading showcase-head" data-reveal>
+        <h2 className="section-title" id="portfolio-title">Skills that drive growth.</h2>
         <p className="section-description">
           The platforms and disciplines I work with every day to help
           businesses grow online.

@@ -5,8 +5,6 @@ import { ToastContainer } from "react-toastify";
 import { Outlet } from "react-router";
 import CopyRIght from "../Components/CopyRIght/CopyRIght";
 import Cursor from "../Components/Cursor/Cursor";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import GlowBg from "../Components/GLowBg/GlowBg";
 
 const RootLayout = () => {
@@ -34,11 +32,6 @@ const RootLayout = () => {
       window.removeEventListener("resize", handleScroll);
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, []);
-
-  useEffect(() => {
-    AOS.init({ duration: 750, once: true, offset: 35, easing: "ease-out-cubic" });
-    AOS.refresh();
   }, []);
 
   return (
